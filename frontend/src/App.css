@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+
+body {
+  background: #ffebef;
+  margin: 20px 40px;
+}
+
+.job-item {
+  width: 80%;
+  margin: 0 auto;
+  /* display: flex; */
+  justify-content: space-between;
+  padding: 20px 10px;
+  align-items: center;
+}
