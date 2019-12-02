@@ -4,11 +4,16 @@ import Jobs from "./components/Jobs";
 
 const JOB_API_URL = "http://localhost:8080/jobs";
 
+// const mockJobs = [
+//   { title: "SED1", company: "Amazon", location: "Seattle, WA" },
+//   { title: "SED1", company: "Apple", location: "Seattle, WA" }
+// ];
+
 async function fetchJobs(updateCb) {
   const res = await fetch(JOB_API_URL);
-  const json = await res.json();
+  const data = await res.json();
 
-  updateCb(json);
+  updateCb(data);
 }
 
 function App() {
