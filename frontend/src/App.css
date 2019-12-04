@@ -19,9 +19,15 @@ body {
 
 .job-item:hover {
   cursor: pointer;
+  color: #ff9fb2;
 }
 
 .main-title {
   font-family: "Lobster", cursive;
   font-size: 3em;
+}
+
+.company_logo {
+  height: 30px;
+  float: right;
 }

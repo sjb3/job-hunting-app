@@ -2,9 +2,9 @@ import React from "react";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 
-export default function JobItem({ job }) {
+export default function JobItem({ job, onClick }) {
   return (
-    <Paper className={"job-item"}>
+    <Paper onClick={onClick} className={"job-item"}>
       <div>
         <Typography variant="h6" style={{ textAlign: "left" }}>
           {job.title}
@@ -20,6 +20,14 @@ export default function JobItem({ job }) {
           style={{ fontStyle: "italic", textAlign: "left" }}
         >
           {job.location}
+        </Typography>
+      </div>
+      <div>
+        <Typography variant="caption">
+          {job.created_at
+            .split(" ")
+            .slice(0, 3)
+            .join(" ")}
         </Typography>
       </div>
     </Paper>

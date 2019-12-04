@@ -3,6 +3,7 @@
 var fetch = require("node-fetch");
 const baseURL = "https://jobs.github.com/positions.json";
 const setAsync = promisify(client.set).bind(client);
+const axios = require("axios");
 
 async function fetchGithub() {
   console.log(">>> start fetchGithub()");
@@ -13,7 +14,8 @@ async function fetchGithub() {
 
   // fetch all pages
   while (resultCount > 0) {
-    const res = await fetch(`${baseURL}?page=${onPage}`);
+    // const res = await fetch(`${baseURL}?page=${onPage}`);
+    const res = await axios.get(`${baseURL}?page=${onPage}`);
     const jobs = await res.json();
     allJobs.push(...jobs);
     resultCount = jobs.length;
